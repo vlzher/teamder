@@ -7,6 +7,7 @@ const routes = [
     path: "/dashboard",
     component: HomeView,
   },
+  { name: "Home", path: "/", component: HomeView },
 ];
 export const router = createRouter({
   history: createWebHistory(),
