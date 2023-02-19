@@ -3,7 +3,12 @@
     @click="isClicked = !isClicked"
     :class="!isClicked ? 'menu opened' : 'menu closed'"
   >
-    <img v-if="isClicked" class="unselectable" src="@/assets/exit.svg" alt="close button" />
+    <img
+      v-if="isClicked"
+      class="unselectable"
+      src="@/assets/exit.svg"
+      alt="close button"
+    />
   </div>
   <div :class="isClicked ? 'menu-content-wrap active' : 'menu-content-wrap'">
     <div class="menu-content">
@@ -43,17 +48,17 @@ export default {
 .menu.closed {
   background: #5850ec;
 }
-.menu-content-wrap.active{
+.menu-content-wrap.active {
   position: absolute;
   top: 80px;
   right: 30px;
   transform: scale(1);
   transition-timing-function: ease;
 }
-.menu-content-wrap{
+.menu-content-wrap {
   position: absolute;
-  top:-60px;
-  right:-80px;
+  top: -60px;
+  right: -80px;
   transform: scale(0);
   transition: 0.3s;
 }
@@ -67,19 +72,17 @@ export default {
   align-items: center;
   padding: 10%;
   flex-direction: column;
-
 }
-.menu-bar{
-  width:80%;
+.menu-bar {
+  width: 80%;
   height: 25%;
   background: white;
   font-size: 20px;
-  margin:5%;
+  margin: 5%;
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
 }
 </style>
