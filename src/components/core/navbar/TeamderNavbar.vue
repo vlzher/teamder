@@ -4,7 +4,7 @@
   >
     <div class="w-full px-5 container flex flex-wrap items-center justify-between">
       <a href="#" class="flex items-center">
-        <img src="logo.png" class="h-6 mr-3 sm:h-10" alt="Teamder Logo" />
+        <img src="../../../assets/logo.png" class="h-6 mr-3 sm:h-10" alt="Teamder Logo" />
         <span
           class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
           >Teamder</span
