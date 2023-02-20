@@ -17,17 +17,17 @@ import { Navbar, NavbarLogo, NavbarCollapse, NavbarLink } from "flowbite-vue";
         <div class="w-full flex justify-end items-center">
           <router-link to="/">
             <div
-              class="mr-5 w-5 h-5 bg-no-repeat bg-cover bg-[url('theme.png')] cursor-pointer"
+              class="mr-5 w-5 h-5 bg-no-repeat bg-cover bg-[url('../assets/theme.png')] cursor-pointer"
             ></div>
           </router-link>
           <router-link to="/">
             <div
-              class="mr-5 w-5 h-5 bg-no-repeat bg-cover bg-[url('analitics.png')] cursor-pointer"
+              class="mr-5 w-5 h-5 bg-no-repeat bg-cover bg-[url('../assets/analitics.png')] cursor-pointer"
             ></div>
           </router-link>
           <router-link to="/">
             <div
-              class="mr-5 w-6 h-6 bg-no-repeat bg-cover bg-[url('avatar.png')] cursor-pointer"
+              class="mr-5 w-6 h-6 bg-no-repeat bg-cover bg-[url('../assets/avatar.png')] cursor-pointer"
             ></div>
           </router-link>
           <router-link to="/logout">
