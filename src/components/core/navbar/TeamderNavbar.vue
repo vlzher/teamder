@@ -3,7 +3,7 @@
     class="flex items-center w-full h-20 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700"
   >
     <div
-      class="h-full w-full px-10 flex flex-wrap items-center justify-between"
+      class="h-full w-full px-16 flex flex-wrap items-center justify-between"
     >
       <a href="#" class="flex items-center">
         <img
