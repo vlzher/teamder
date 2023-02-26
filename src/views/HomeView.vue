@@ -1,7 +1,6 @@
 <template>
   <div class="container !w-3/4">
     <CreateProjectCard class="w-full" />
-    <SearchBar />
     <Projects />
     <Pagination />
   </div>

@@ -2,7 +2,7 @@
   <div class="flex items-center md:order-2">
     <button
       type="button"
-      class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+      class="flex mr-3 text-sm md:mr-0"
       id="user-menu-button"
       aria-expanded="false"
       data-dropdown-toggle="user-dropdown"
@@ -11,6 +11,9 @@
       <span class="sr-only">Open user menu</span>
       <div
         class="w-10 h-10 rounded-full bg-cover bg-[url('../assets/avatar.png')]"
+      ></div>
+      <div
+        class="ml-1 w-4 h-10 bg-center bg-no-repeat bg-[url('../assets/polygon-avatar.png')]"
       ></div>
     </button>
     <div
@@ -26,20 +29,11 @@
       </div>
       <ul class="py-2" aria-labelledby="user-menu-button">
         <li>
-          <router-link to="/">
-            <div
-              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-            >
-              Home
-            </div>
-          </router-link>
-        </li>
-        <li>
           <router-link to="/dashboard">
             <div
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
             >
-              Dashboard
+              Profile
             </div>
           </router-link>
         </li>

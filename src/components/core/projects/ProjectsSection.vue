@@ -1,12 +1,25 @@
 <template>
-  <div class="flex justify-center items-center text-4xl text-black-800 font-bold">
-    Projects
+  <div class="cont1 flex flex-col w-full h-3/4">
+    <div
+      class="flex w-full h-20 px-14 items-center bg-white border-gray border-b-2"
+    >
+      <span class="items-center mr-12 text-2xl text-black-700 font-bold"
+        >Projects</span
+      >
+      <SearchBar />
+    </div>
+    <ProjectSection />
+    <ProjectSection />
+    <ProjectSection />
+    <ProjectSection />
   </div>
-  <ProjectSection/>
-  <ProjectSection/>
-  <ProjectSection/>
-  <ProjectSection/>
 </template>
 <script setup lang="ts">
 import ProjectSection from "@/components/core/projects/ProjectSection.vue";
+import SearchBar from "@/components/core/search/SearchBar.vue";
 </script>
+<style scoped>
+.cont1 {
+  box-shadow:0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+</style>
