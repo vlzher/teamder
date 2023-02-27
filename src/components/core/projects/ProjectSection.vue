@@ -16,12 +16,14 @@
     </div>
     <div class="pl-6 w-3/4 h-full flex flex-col">
       <div class="w-full h-10 flex flex-row items-center">
-        <div class="w-full h-1/2 text-black text-base text-opacity-70">
+        <div class="w-full h-1/2 text-black text-xs text-opacity-70">
           Here are the biggest enterprise technology acquisitions of 2021 so
           far, in reverse chronological order.
         </div>
       </div>
-      <div class="mt-2 w-60 h-1-2 mt-10 grid grid-rows-2 grid-cols-3 gap-x-5 gap-y-3">
+      <div
+        class="mt-2 w-60 h-1-2 mt-10 grid grid-rows-2 grid-cols-3 gap-x-5 gap-y-3"
+      >
         <div
           class="py-1 text-xs rounded-full flex justify-center items-center bg-[#E1EFFE] text-[#1E429F]"
         >
@@ -65,4 +67,3 @@
     </div>
   </div>
 </template>
-
