@@ -8,6 +8,9 @@ const routes = [
     component: HomeView,
   },
   { name: "Home", path: "/", component: HomeView },
+  { name: "Explore", path: "/explore", component: HomeView },
+  { name: "Profile", path: "/profile", component: HomeView },
+  { name: "Signout", path: "/signout", component: HomeView },
 ];
 export const router = createRouter({
   history: createWebHistory(),
