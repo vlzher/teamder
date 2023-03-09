@@ -13,20 +13,26 @@ interface ProjectResponse {
   data: Project[];
 }
 const URL = "https://teamder-dev.herokuapp.com/api";
-export async function getProjects(page: number, size: number) {
-  try {
-    const { data } = await axios.get<ProjectResponse>(`${URL}/projects`, {
-      params: { page: page, size: size },
+const numberOfProjects = 4;
+export function getProjects(
+  page: number,
+): Promise<ProjectResponse> {
+  return axios
+    .get<ProjectResponse>(`${URL}/projects`, {
+      params: { page: page, size: numberOfProjects },
+    })
+    .then((response) => {
+      console.log(response.data.last);
+      console.log(response.data);
+      return response.data;
+    })
+    .catch((error) => {
+      if (axios.isAxiosError(error)) {
+        console.log("error message: ", error.message);
+        throw new Error(error.message);
+      } else {
+        console.log("unexpected error: ", error);
+        throw new Error("An unexpected error occurred");
+      }
     });
-
-    return data;
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.log("error message: ", error.message);
-      return error.message;
-    } else {
-      console.log("unexpected error: ", error);
-      return "An unexpected error occurred";
-    }
-  }
 }

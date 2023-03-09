@@ -8,22 +8,24 @@
       >
       <SearchBar />
     </div>
-    <ProjectSection v-for="project in projects" :name="project.name" />
+    <ProjectSection
+      v-for="project in projects"
+      :name="project.name"
+      :shortDescription="project.shortDescription"
+      :teamSize="project.teamSize"
+      :occupiedPlaces="project.occupiedPlaces"
+      :openedRoles="project.openedRoles"
+    />
   </div>
 </template>
 <script setup lang="ts">
 import ProjectSection from "@/components/core/projects/ProjectSection.vue";
 import SearchBar from "@/components/core/search/SearchBar.vue";
-import { getProjects } from "@/api/api";
-import { watch, ref } from "vue";
-import { useRoute, useRouter } from "vue-router";
-const route = useRoute();
-const router = useRouter();
-const page = ref(router.currentRoute.params?.page || 0);
-const projects = ref(getProjects(page.value, 4));
-watch(router.currentRoute, (currentValue) => {
-  page.value = currentValue.params.page;
-  projects.value = getProjects(page.value, 4);
+defineProps({
+  projects: {
+    type: Array,
+    required: true,
+  },
 });
 </script>
 <style scoped>
