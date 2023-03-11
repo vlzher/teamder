@@ -17,14 +17,14 @@ import Pagination from "@/components/core/pagination/Pagination.vue";
 import { onMounted, ref, watch } from "vue";
 import { getProjects } from "@/api/api";
 import { useRoute, useRouter } from "vue-router";
-import type {Project, ProjectResponse} from "@/types/api";
+import type {Project} from "@/types/api";
 const route = useRoute();
 const router = useRouter();
 const page = ref(1);
 const isLastPage = ref(false);
 const isFirstPage = ref(false);
 const projects = ref<Project[]>([]);
-function pageChanged(page1: string) {
+function pageChanged(page1: string | number) {
   page.value = +page1;
   pushWithQuery({ page: page1 });
 }
@@ -36,9 +36,8 @@ function setUpVariables() {
   });
 }
 onMounted(() => {
-  if (page.value < 1 || !page.value) {
-    page.value = 1;
-    pushWithQuery({ page: 1 });
+  if (page.value === 1) {
+    pageChanged(1);
   }
 });
 watch(page, () => {
