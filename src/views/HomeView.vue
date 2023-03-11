@@ -32,7 +32,6 @@ function pageChanged(page1: string | number) {
 }
 async function setUpVariables() {
   await getProjects(page.value - 1).then((res) => {
-    console.log(res);
     projects.value = res.content;
     isLastPage.value = res.last;
     isFirstPage.value = res.first;
