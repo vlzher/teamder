@@ -27,7 +27,9 @@ const isLastPage = ref(false);
 const isFirstPage = ref(false);
 const projects = ref<Project[]>([]);
 const searchQuery = ref("");
-function searchQueryChanged(searchQuery1: string) {
+function searchQueryChanged(searchQuery1: any) {
+  if (searchQuery1 instanceof Event) return;
+  if (searchQuery1 === "[object+Event]") return;
   pushWithQuery({ searchQuery: searchQuery1, page: 1 });
   page.value = 1;
   searchQuery.value = searchQuery1;
