@@ -19,11 +19,15 @@
   </div>
 </template>
 <script setup lang="ts">
+import type {Project} from "@/types/api";
+
+;
 import ProjectSection from "@/components/core/projects/ProjectSection.vue";
 import SearchBar from "@/components/core/search/SearchBar.vue";
+import type { PropType } from "vue";
 defineProps({
   projects: {
-    type: Array,
+    type: Array as PropType<Project[]>,
     required: true,
   },
 });

@@ -50,7 +50,9 @@
     </div>
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
+import type {PropType} from "vue";
+
 defineProps({
   name: {
     type: String,
@@ -69,8 +71,8 @@ defineProps({
     required: true,
   },
   openedRoles: {
-    type: Array[String],
     required: true,
+    type: Array as PropType<string[]>,
   },
 });
 </script>

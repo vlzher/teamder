@@ -26,7 +26,7 @@ li:last-child a {
   border-bottom-right-radius: 0.25rem;
 }
 </style>
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
 const props = defineProps({
   page: {
@@ -52,7 +52,7 @@ const paginationPages = computed(() => {
   }
   return ["Previous", +props.page - 1, +props.page, +props.page + 1, "Next"];
 });
-function changePage(paginationPage) {
+function changePage(paginationPage: string | number) {
   if (props.page < 1) return;
   if (paginationPage === "Previous") {
     if (props.page === 1) return;
