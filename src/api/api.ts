@@ -1,5 +1,5 @@
 import axios from "axios";
-import type {ProjectResponse} from "@/types/api";
+import type { ProjectResponse } from "@/types/api";
 interface Project {
   id: number;
   name: string;
@@ -12,10 +12,13 @@ interface Project {
 
 const URL = "https://teamder-dev.herokuapp.com/api";
 const numberOfProjects = 4;
-export function getProjects(page: number): Promise<ProjectResponse> {
+export function getProjects(
+  page: number,
+  searchQuery: string
+): Promise<ProjectResponse> {
   return axios
     .get<ProjectResponse>(`${URL}/projects`, {
-      params: { page: page, size: numberOfProjects },
+    params: { page: page, size: numberOfProjects, searchQuery: searchQuery },
     })
     .then((response) => {
       return response.data;

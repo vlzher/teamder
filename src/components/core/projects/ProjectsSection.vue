@@ -6,11 +6,12 @@
       <span class="items-center mr-12 text-2xl text-black-700 font-bold"
         >Projects</span
       >
-      <SearchBar />
+      <SearchBar @search="(val) => $emit('search', val)" />
     </div>
     <ProjectSection
       v-for="project in projects"
       :name="project.name"
+      :key="project.id"
       :shortDescription="project.shortDescription"
       :teamSize="project.teamSize"
       :occupiedPlaces="project.occupiedPlaces"
@@ -19,9 +20,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import type {Project} from "@/types/api";
-
-;
+import type { Project } from "@/types/api";
 import ProjectSection from "@/components/core/projects/ProjectSection.vue";
 import SearchBar from "@/components/core/search/SearchBar.vue";
 import type { PropType } from "vue";

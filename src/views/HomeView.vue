@@ -1,7 +1,7 @@
 <template>
   <div class="container !w-3/4">
     <CreateProjectCard class="w-full" />
-    <Projects :projects="projects" />
+    <Projects :projects="projects" @search="(val) => searchQueryChanged(val)" />
     <Pagination
       :page="page"
       :first="isFirstPage"
@@ -26,12 +26,19 @@ const totalPages = ref(0);
 const isLastPage = ref(false);
 const isFirstPage = ref(false);
 const projects = ref<Project[]>([]);
+const searchQuery = ref("");
+function searchQueryChanged(searchQuery1: string) {
+  pushWithQuery({ searchQuery: searchQuery1, page: 1 });
+  page.value = 1;
+  searchQuery.value = searchQuery1;
+  setUpVariables();
+}
 function pageChanged(page1: string | number) {
   page.value = +page1;
   pushWithQuery({ page: page1 });
 }
 async function setUpVariables() {
-  await getProjects(page.value - 1).then((res) => {
+  await getProjects(page.value - 1, searchQuery.value).then((res) => {
     projects.value = res.content;
     isLastPage.value = res.last;
     isFirstPage.value = res.first;
