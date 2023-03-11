@@ -18,6 +18,7 @@ export function getProjects(page: number): Promise<ProjectResponse> {
       params: { page: page, size: numberOfProjects },
     })
     .then((response) => {
+      console.log(response);
       console.log(response.data.last);
       console.log(response.data);
       return response.data;
