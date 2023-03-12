@@ -34,5 +34,5 @@ export interface Project {
   teamSize: number;
   occupiedPlaces: number;
   openedRoles: string[];
-  avatarURLs: (string | null)[];
+  avatarURLs: string[];
 }

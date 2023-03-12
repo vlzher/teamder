@@ -5,7 +5,7 @@
         href="#"
         class="flex items-center mb-10 text-5xl font-semibold text-gray-900 dark:text-white"
       >
-        <img class="w-36 h-36" src="logo.png" alt="logo" />
+        <img class="w-36 h-36" src="../assets/logo.png" alt="logo" />
         Teamder
       </a>
       <div
@@ -30,7 +30,6 @@
                 id="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="name@name.com"
-                required=""
               />
             </div>
             <div>
@@ -45,7 +44,6 @@
                 id="password"
                 placeholder="••••••••"
                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                required=""
               />
             </div>
             <div class="flex items-center justify-between">
@@ -56,7 +54,6 @@
                     aria-describedby="remember"
                     type="checkbox"
                     class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                    required=""
                   />
                 </div>
                 <div class="ml-3 text-sm">
