@@ -16,6 +16,7 @@
       :teamSize="project.teamSize"
       :occupiedPlaces="project.occupiedPlaces"
       :openedRoles="project.openedRoles"
+      :avatarURLs="project.avatarURLs"
     />
   </div>
 </template>

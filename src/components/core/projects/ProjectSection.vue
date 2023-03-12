@@ -32,17 +32,23 @@
     <div class="w-1/3 h-full flex items-center mb-2">
       <div class="w-full h-full relative flex items-center justify-end">
         <div
-          class="border-white border-2 w-10 h-10 absolute mr-20 rounded-full bg-cover bg-[url('../assets/avatar.png')]"
-        />
-        <div
-          class="border-white border-2 w-10 h-10 absolute mr-16 rounded-full bg-cover bg-[url('../assets/avatar.png')]"
-        />
-        <div
-          class="border-white border-2 w-10 h-10 absolute mr-12 rounded-full bg-cover bg-[url('../assets/avatar.png')]"
-        />
-        <div
-          class="border-white border-2 w-10 h-10 absolute mr-8 rounded-full bg-cover bg-[url('../assets/avatar.png')]"
-        />
+          class="w-10 h-10 bg-white rounded-full absolute border flex items-center justify-center"
+          v-for="(avatarURL, id) in avatarURLs"
+          :style="{
+            marginRight: id * 30 + 40 + 'px',
+
+            zIndex: -id,
+          }"
+        >
+          <div
+            class="w-full h-full rounded-full bg-cover bg-center"
+            :style="{
+              backgroundImage: avatarURL
+                ? `url(${avatarURL})`
+                : `url('src/assets/avatar.png')`,
+            }"
+          ></div>
+        </div>
         <div
           class="w-5 h-8 opacity-10 group-hover:opacity-90 absolute ease-linear duration-100 bg-cover bg-[url('../assets/nextVector.svg')] cursor-pointer"
         />
@@ -51,9 +57,9 @@
   </div>
 </template>
 <script setup lang="ts">
-import type {PropType} from "vue";
+import type { PropType } from "vue";
 
-defineProps({
+const props = defineProps({
   name: {
     type: String,
     required: true,
@@ -74,5 +80,10 @@ defineProps({
     required: true,
     type: Array as PropType<string[]>,
   },
+  avatarURLs: {
+    required: true,
+    type: Array as PropType<string[]>,
+  },
 });
+console.log(props.avatarURLs);
 </script>
