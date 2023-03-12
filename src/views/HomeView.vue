@@ -1,4 +1,5 @@
 <template>
+  <TeamderNavbar />
   <div class="container !w-3/4">
     <CreateProjectCard class="w-full" />
     <Projects :projects="projects" @search="(val) => searchQueryChanged(val)" />
@@ -10,6 +11,7 @@
       @pageChanged="(page1) => pageChanged(page1)"
     />
   </div>
+  <MegaMenu />
 </template>
 <script setup lang="ts">
 import CreateProjectCard from "@/components/CreateProjectCard.vue";
@@ -19,6 +21,8 @@ import { onMounted, ref, watch } from "vue";
 import { getProjects } from "@/api/api";
 import { useRoute, useRouter } from "vue-router";
 import type { Project } from "@/types/api";
+import TeamderNavbar from "@/components/core/navbar/TeamderNavbar.vue";
+import MegaMenu from "@/components/core/mega-menu/MegaMenu.vue";
 const route = useRoute();
 const router = useRouter();
 const page = ref(0);
